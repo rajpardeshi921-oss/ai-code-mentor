@@ -3,7 +3,12 @@
 # AI Code Mentor
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/40b47ce3-3188-411b-adfe-d4e5e29c0d8" alt="AI Code Mentor Logo" width="96" />
+  <img 
+    src="https://github.com/user-attachments/assets/b0f2b3aa-1d6a-4031-b77b-b81aac34c53d" 
+    alt="AI Code Mentor Logo" 
+    width="96" 
+    height="96"
+  />
 </p>
 
 <p align="center">
