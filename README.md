@@ -1,7 +1,8 @@
 
 <p align="center">
   <img 
-    src="https://github.com/user-attachments/assets/4086b752-0c2f-4a31-90ad-d48a3e31288f" 
+    src="<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/40b47ce3-3188-411b-adfe-d4e5e29c0d81" />
+" 
     alt="AI Code Mentor Logo" 
     width="96" 
     height="96"
