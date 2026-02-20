@@ -510,7 +510,7 @@ Health check endpoint.
 
 ---
 
-## 📄 ScreenShots
+## 🖥 Screenshots
 
 <img width="1457" height="978" alt="image" src="https://github.com/user-attachments/assets/11f4e38b-c7e8-43ff-ade2-b428981f1355" />
 
