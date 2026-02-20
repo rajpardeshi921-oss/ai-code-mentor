@@ -510,9 +510,11 @@ Health check endpoint.
 
 ---
 
-## 📄 License
+## 📄 ScreenShots
 
-MIT License - feel free to use and modify as needed.
+<img width="1457" height="978" alt="image" src="https://github.com/user-attachments/assets/11f4e38b-c7e8-43ff-ade2-b428981f1355" />
+<img width="1457" height="978" alt="image" src="https://github.com/user-attachments/assets/11f4e38b-c7e8-43ff-ade2-b428981f1355" />
+
 
 ---
 
