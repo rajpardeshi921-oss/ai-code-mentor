@@ -1,0 +1,20 @@
+# Compiled files
+out/
+*.js
+*.js.map
+
+# Dependencies
+node_modules/
+.pnpm-lock.yaml
+
+# VSCode
+.vscode-test/
+*.vsix
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db

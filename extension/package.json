@@ -1,0 +1,121 @@
+{
+  "name": "ai-code-mentor",
+  "displayName": "AI Code Mentor",
+  "description": "AI-powered code analysis with bug detection, security warnings, and improvement suggestions",
+  "version": "1.0.0",
+  "publisher": "aicodementor",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Formatters"
+  ],
+  "keywords": [
+    "ai",
+    "code review",
+    "code analysis",
+    "bug detection",
+    "security",
+    "mentor",
+    "learning"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ai-code-mentor.reviewCode",
+        "title": "AI: Review Current File",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.reviewWorkspace",
+        "title": "AI: Review Workspace",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.clearDiagnostics",
+        "title": "AI: Clear AI Diagnostics",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.toggleAutoReview",
+        "title": "AI: Toggle Auto Review on Save",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.showReviewMenu",
+        "title": "AI: Review Actions",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.showOutput",
+        "title": "AI: Show Output",
+        "category": "AI Code Mentor"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "ai-code-mentor.reviewCode",
+          "group": "navigation",
+          "when": "editorTextFocus"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "ai-code-mentor.reviewCode"
+        },
+        {
+          "command": "ai-code-mentor.reviewWorkspace"
+        },
+        {
+          "command": "ai-code-mentor.clearDiagnostics"
+        },
+        {
+          "command": "ai-code-mentor.toggleAutoReview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AI Code Mentor",
+      "properties": {
+        "aiCodeMentor.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "URL of the AI Code Mentor backend server"
+        },
+        "aiCodeMentor.timeout": {
+          "type": "number",
+          "default": 30000,
+          "description": "Request timeout in milliseconds"
+        },
+        "aiCodeMentor.autoReviewOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically review files when saved (debounced by 1.5s)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.50.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.13.5"
+  }
+}

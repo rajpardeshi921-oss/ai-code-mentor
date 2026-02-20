@@ -1,0 +1,390 @@
+/* ============================================
+   Variables & Global Styles
+   ============================================ */
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --text-primary: #1e1e1e;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
+    --accent-color: #0078d4;
+    --success-color: #107c10;
+    --warning-color: #ffb900;
+    --danger-color: #d13438;
+    --info-color: #0078d4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Container Layout
+   ============================================ */
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#app {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+.header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Loading State
+   ============================================ */
+
+.loading-text {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin: 40px 0;
+    animation: fade 1.5s infinite;
+}
+
+@keyframes fade {
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Rating Section
+   ============================================ */
+
+.rating-card {
+    text-align: center;
+}
+
+.rating-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.rating-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.rating-label {
+    font-size: 20px;
+    color: var(--text-secondary);
+}
+
+.rating-bar {
+    width: 100%;
+    height: 12px;
+    background-color: var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.rating-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #ffb900, #107c10);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+/* ============================================
+   Issues & Items
+   ============================================ */
+
+.issue-item,
+.improvement-item,
+.tip-item {
+    background-color: var(--bg-primary);
+    border-left: 4px solid var(--info-color);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.issue-item:hover,
+.improvement-item:hover,
+.tip-item:hover {
+    transform: translateX(4px);
+}
+
+.issue-item.critical {
+    border-left-color: var(--danger-color);
+    background-color: rgba(211, 52, 56, 0.05);
+}
+
+.issue-item.high {
+    border-left-color: #ff8c00;
+    background-color: rgba(255, 140, 0, 0.05);
+}
+
+.issue-item.medium {
+    border-left-color: var(--warning-color);
+    background-color: rgba(255, 185, 0, 0.05);
+}
+
+.issue-item.low {
+    border-left-color: #70ad47;
+    background-color: rgba(112, 173, 71, 0.05);
+}
+
+.issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.issue-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.severity-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.severity-badge.critical {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.severity-badge.high {
+    background-color: #ff8c00;
+    color: white;
+}
+
+.severity-badge.medium {
+    background-color: var(--warning-color);
+    color: #333;
+}
+
+.severity-badge.low {
+    background-color: #70ad47;
+    color: white;
+}
+
+.issue-line {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.issue-description {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.issue-suggestion {
+    font-size: 13px;
+    background-color: rgba(0, 120, 212, 0.1);
+    padding: 8px;
+    border-radius: 3px;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.improvement-item {
+    border-left-color: var(--success-color);
+}
+
+.improvement-area {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    background-color: rgba(16, 124, 16, 0.2);
+    color: var(--success-color);
+    border-radius: 3px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.improvement-example {
+    font-size: 12px;
+    background-color: var(--border-color);
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 8px;
+    font-family: 'Courier New', monospace;
+    color: var(--text-secondary);
+}
+
+.tip-item {
+    border-left-color: #0078d4;
+}
+
+.tip-concept {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.tip-explanation {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.tip-example {
+    font-size: 12px;
+    background-color: var(--border-color);
+    padding: 10px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Code Block
+   ============================================ */
+
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 640px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .rating-score {
+        font-size: 36px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

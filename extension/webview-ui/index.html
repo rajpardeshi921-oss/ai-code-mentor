@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Review</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>📋 AI Code Review</h1>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" style="display: none;">
+                <p class="loading-text">Analyzing your code...</p>
+            </div>
+
+            <!-- Main Content -->
+            <div id="content" style="display: none;">
+                <!-- Summary Section -->
+                <section class="card">
+                    <h2>📊 Summary</h2>
+                    <p id="summary-text"></p>
+                </section>
+
+                <!-- Rating Section -->
+                <section class="card rating-card">
+                    <h2>⭐ Code Quality Rating</h2>
+                    <div class="rating-display">
+                        <div class="rating-score" id="rating-score">0</div>
+                        <div class="rating-label">/10</div>
+                    </div>
+                    <div class="rating-bar">
+                        <div class="rating-fill" id="rating-fill"></div>
+                    </div>
+                </section>
+
+                <!-- Bugs Section -->
+                <section class="card" id="bugs-section" style="display: none;">
+                    <h2>🐛 Bugs Found</h2>
+                    <div id="bugs-content"></div>
+                </section>
+
+                <!-- Security Issues Section -->
+                <section class="card" id="security-section" style="display: none;">
+                    <h2>🔒 Security Issues</h2>
+                    <div id="security-content"></div>
+                </section>
+
+                <!-- Improvements Section -->
+                <section class="card" id="improvements-section" style="display: none;">
+                    <h2>💡 Code Improvements</h2>
+                    <div id="improvements-content"></div>
+                </section>
+
+                <!-- Teaching Tips Section -->
+                <section class="card" id="tips-section" style="display: none;">
+                    <h2>📚 Learning Tips</h2>
+                    <div id="tips-content"></div>
+                </section>
+
+                <!-- Refactored Code Section -->
+                <section class="card" id="refactor-section" style="display: none;">
+                    <h2>✨ Refactored Code</h2>
+                    <pre id="refactored-code"></pre>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
