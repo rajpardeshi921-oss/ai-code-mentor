@@ -283,9 +283,38 @@ export class ReviewCommand {
         console.log('[Review Command] Normalized data:', safeData);
         this.logger.info(`Parsed: score=${safeData.score}, bugs=${safeData.bugs.length}, security=${safeData.security.length}, suggestions=${safeData.suggestions.length}`);
 
+          import * as vscode from 'vscode';
         // Parse with universal parser
         if (safeData.review) {
           // Text-based response
+          function logReviewResult(document: vscode.TextDocument, parsed: ParsedReview) {
+            outputChannel.appendLine(`Analyzed file: ${document.fileName}`);
+            if (typeof parsed.score === 'number') {
+              outputChannel.appendLine(`Score: ${parsed.score}/10`);
+            }
+            if (parsed.summary) {
+              outputChannel.appendLine(`Summary: ${parsed.summary}`);
+            }
+            if (Array.isArray(parsed.suggestions) && parsed.suggestions.length > 0) {
+              outputChannel.appendLine('Suggestions:');
+              for (const s of parsed.suggestions) {
+                outputChannel.appendLine(`  - ${s.suggestion}`);
+              }
+            }
+            if (Array.isArray(parsed.issues) && parsed.issues.length > 0) {
+              outputChannel.appendLine('Issues:');
+              for (const i of parsed.issues) {
+                outputChannel.appendLine(`  - ${i.issue}`);
+              }
+            }
+            if (Array.isArray(parsed.security) && parsed.security.length > 0) {
+              outputChannel.appendLine('Security:');
+              for (const sec of parsed.security) {
+                outputChannel.appendLine(`  - ${sec.security}`);
+              }
+            }
+            outputChannel.appendLine('');
+          }
           parsed = parseReviewText(safeData.review);
         } else {
           // Structured response

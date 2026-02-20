@@ -28,32 +28,32 @@
     "commands": [
       {
         "command": "ai-code-mentor.reviewCode",
-        "title": "AI: Review Current File",
+        "title": "AI Mentor: Review Current File",
         "category": "AI Code Mentor"
       },
       {
         "command": "ai-code-mentor.reviewWorkspace",
-        "title": "AI: Review Workspace",
-        "category": "AI Code Mentor"
-      },
-      {
-        "command": "ai-code-mentor.clearDiagnostics",
-        "title": "AI: Clear AI Diagnostics",
-        "category": "AI Code Mentor"
-      },
-      {
-        "command": "ai-code-mentor.toggleAutoReview",
-        "title": "AI: Toggle Auto Review on Save",
-        "category": "AI Code Mentor"
-      },
-      {
-        "command": "ai-code-mentor.showReviewMenu",
-        "title": "AI: Review Actions",
+        "title": "AI Mentor: Review Workspace",
         "category": "AI Code Mentor"
       },
       {
         "command": "ai-code-mentor.showOutput",
-        "title": "AI: Show Output",
+        "title": "AI Mentor: Show Last Result",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.clearDiagnostics",
+        "title": "AI Mentor: Clear Diagnostics",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.toggleAutoReview",
+        "title": "AI Mentor: Toggle Auto Review on Save",
+        "category": "AI Code Mentor"
+      },
+      {
+        "command": "ai-code-mentor.showReviewMenu",
+        "title": "AI Mentor: Review Actions",
         "category": "AI Code Mentor"
       }
     ],

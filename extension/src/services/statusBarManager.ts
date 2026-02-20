@@ -35,22 +35,28 @@ export class StatusBarManager {
 
     switch (state) {
       case StatusBarState.Idle:
-        this.statusItem.text = '$(robot) AI Reviewer Ready';
+        this.statusItem.text = '$(robot) AI Mentor Ready';
         this.statusItem.tooltip = 'Click to review current file or workspace';
         this.statusItem.command = 'ai-code-mentor.reviewCode';
         this.statusItem.color = undefined;
         break;
 
       case StatusBarState.Scanning:
-        this.statusItem.text = '$(sync~spin) AI Reviewing...';
-        this.statusItem.tooltip = extraInfo || 'Scanning files...';
-        this.statusItem.command = 'ai-code-mentor.showOutput';
+        this.statusItem.text = '$(sync~spin) Reviewing with AI...';
+        this.statusItem.tooltip = extraInfo || 'AI is analyzing your code.';
+        this.statusItem.command = undefined;
         this.statusItem.color = new vscode.ThemeColor('statusBarItem.warningForeground');
         break;
 
       case StatusBarState.Done:
-        this.statusItem.text = '$(check) AI Review Complete';
-        this.statusItem.tooltip = extraInfo || 'Review complete. Click to view output.';
+        // If extraInfo is a score, show it
+        if (extraInfo && /^\d+(?:\.\d+)?\/?10$/.test(extraInfo)) {
+          this.statusItem.text = `$(robot) Code Score: ${extraInfo}`;
+          this.statusItem.tooltip = 'Click to view full AI review result.';
+        } else {
+          this.statusItem.text = '$(star) AI Review Complete';
+          this.statusItem.tooltip = extraInfo || 'Review complete. Click to view output.';
+        }
         this.statusItem.command = 'ai-code-mentor.showOutput';
         this.statusItem.color = new vscode.ThemeColor('statusBarItem.prominentForeground');
         setTimeout(() => {
